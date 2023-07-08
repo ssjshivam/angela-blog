@@ -28,7 +28,7 @@ gravatar = Gravatar(app,
                     base_url=None)
 
 # #CONNECT TO MULTIPLE DATABASE
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 # for other databases
 app.config['SQLALCHEMY_BINDS'] = {'users': 'sqlite:///users.db'}
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
